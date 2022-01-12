@@ -1,4 +1,4 @@
-<h1 align="center">Pupil Mobile</h1>
+<h1 align="center">Karline Mobile</h1>
 
 ## Contents <!-- omit in toc -->
 
@@ -25,8 +25,8 @@
 ### Clone the repository
 
 ```shell
-git clone https://github.com/getpupil/pupil-mobile.git
-cd pupil-mobile
+git clone https://github.com/Karline-app/karline-mobile.git
+cd karline-mobile
 ```
 
 ### Install dependencies
@@ -67,29 +67,3 @@ npm run firebase:login
   ```shell
   npm run android
   ```
-
-## Branch Structure
-
-**IMPORTANT: When you push to a branch, please open a PR as well (even if your changes are not complete)**
-
-### UI Changes
-
-- Name your branch `ui.<page/component>.<optional description>`
-- Examples
-  - Adding a new messaging page: `ui.messaging.add`
-  - Improving the design of the search bar: `ui.searchbar.improve-design`
-  - Adding an about component in the profile page: `ui.profile.add-about`
-
-### Backend Changes
-
-- Name your branch `backend.<function/area>.<optional description>`
-- Examples
-  - Adding onboarding functions: `backend.onboarding.add`
-  - Improving validation for a messaging function: `backend.messaging.improve-validation`
-  - Editing many functions focused on notifications: `backend.notifications.edit`
-
-### Full-Stack Changes
-
-- Name your branch `all.<area>.<optional description>`
-
-Feel free to use your judgement for any use cases not covered.
