@@ -40,7 +40,7 @@ const App: FC = () => {
         {/* <ProfileHeaderTest /> */}
         <NavigationContainer>
           <Stack.Navigator
-            initialRouteName="Add Experience"
+            initialRouteName="Splash"
             screenOptions={{ headerShown: false }}
           >
             <Stack.Screen name="Splash" component={SplashScreen} />
