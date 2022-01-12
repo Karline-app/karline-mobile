@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Testing
+coverage/
+
+# Production
+dist/
+out/
+build/
+
+# Expo
+.expo/
+.expo-shared/
+web-build/

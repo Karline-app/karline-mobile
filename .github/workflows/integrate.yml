@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.4
+        with:
+          node-version: 15.x
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Lint Project
+        run: npm run lint
+
+      - name: Test Project
+        run: npm run test:ci
+
+      - name: Authenticate Expo
+        uses: expo/expo-github-action@v6
+        with:
+          expo-version: 4.x
+          packager: npm
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Check Issues
+        run: npm run doctor
+
+      - name: Publish
+        if: ${{ github.event_name == 'push' }}
+        run: npm run publish
+
+      - name: Preview
+        if: ${{ github.event_name == 'pull_request' }}
+        run: npm run publish -- --release-channel=pr-${{ github.event.number }}
+
+      - name: Comment on PR
+        uses: unsplash/comment-on-pr@master
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          msg: Preview Deployed! [View it here](https://expo.dev/@pupil-dev/pupil-mobile?release-channel=pr-${{ github.event.number }}).

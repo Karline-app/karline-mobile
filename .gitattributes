@@ -1,0 +1,12 @@
+.firebaserc linguist-language=JSON
+
+.eslintrc linguist-language=JSON
+.eslintignore linguist-language=Ignore-List
+
+.prettierrc linguist-language=JSON
+.prettierignore linguist-language=Ignore-List
+
+.markdownlintrc linguist-language=JSON
+.markdownlintignore linguist-language=Ignore-List
+
+.lintstagedrc linguist-language=JSON

@@ -1,0 +1,16 @@
+{
+  "files.associations": {
+    ".firebaserc": "json",
+
+    ".markdownlintignore": "ignore",
+    ".markdownlintrc": "json",
+
+    ".prettierignore": "ignore",
+    ".prettierc": "json",
+
+    ".eslintignore": "ignore",
+    ".eslintrc": "json",
+
+    ".lintstagedrc": "json"
+  }
+}
